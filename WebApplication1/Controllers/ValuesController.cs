@@ -17,7 +17,7 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public ActionResult Get()
         {
-            string path = @"C:\Users\kopyl\Desktop\Новый текстовый документ.txt";
+            string path = @"C:\...\Новый текстовый документ.txt";
             string[] text = System.IO.File.ReadAllLines(path);
             return Ok(text);
         }
@@ -26,7 +26,7 @@ namespace WebApplication1.Controllers
         public ActionResult Update([FromBody] JsonElement body)
         {
             string text = body.GetProperty("value").ToString();
-            string path = @"C:\Users\kopyl\Desktop\Новый текстовый документ.txt";
+            string path = @"C:\...\Новый текстовый документ.txt";
             System.IO.File.WriteAllText(path, text);
             return Ok(text);
 
